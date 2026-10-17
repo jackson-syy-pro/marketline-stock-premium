@@ -26,7 +26,7 @@
 建議 Python 3.11 或以上。
 
 ```powershell
-cd outputs/stock-premium-app
+cd marketline-stock-premium
 py -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
