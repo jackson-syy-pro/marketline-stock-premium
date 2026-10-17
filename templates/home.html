@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}投資資訊一目了然{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="pulse"></span> 市場脈動 · 每日更新</div>
+    <h1>投資資訊，<br><em>一目了然。</em></h1>
+    <p>建立你的股票觀察清單，掌握市場最新報價。升級 Premium，解鎖進階市場洞察。</p>
+    <div class="hero-actions"><a class="button primary" href="{{ url_for('register') }}">免費開始 <span>↗</span></a><a class="text-link" href="{{ url_for('login') }}">已有帳戶？登入</a></div>
+    <div class="hero-note"><span>●</span> 安全可靠的 Stripe 訂閱付款</div>
+  </div>
+  <div class="hero-art">
+    <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+    <div class="orb-main"><span class="orb-label">MARKET PULSE</span><strong>+12.8%</strong><span class="orb-sub">本週觀察清單</span><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    <div class="float-card card-a"><b>NVDA</b><span>+3.42%</span><small>今日表現</small></div>
+    <div class="float-card card-b"><b>你的投資</b><span class="tiny-bars"><i></i><i></i><i></i><i></i><i></i><i></i></span><small>追蹤更有方向</small></div>
+    <span class="star star-a">✳</span><span class="star star-b">✦</span>
+  </div>
+</section>
+<section class="feature-strip"><div><span>01</span><b>即時概覽</b><small>快速查看股票市場價格</small></div><div><span>02</span><b>個人清單</b><small>追蹤你關心的股票</small></div><div><span>03</span><b>Premium 會員</b><small>升級你的市場體驗</small></div></section>
+<section class="premium-band"><div><div class="eyebrow">MARKETLINE PREMIUM</div><h2>更多市場視野，<em>由你掌握。</em></h2><p>升級會員以享用更豐富的投資資訊。</p></div><a href="{{ url_for('register') }}" class="button dark">探索會員方案 <span>↗</span></a></section>
+{% endblock %}

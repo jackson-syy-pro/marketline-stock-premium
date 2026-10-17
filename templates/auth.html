@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ '建立帳戶' if mode == 'register' else '登入' }}{% endblock %}
+{% block content %}
+<section class="auth-layout"><div class="auth-aside"><div class="eyebrow">MARKETLINE ACCOUNT</div><h1>{{ '投資旅程，\n由此開始。' if mode == 'register' else '歡迎回來。' }}</h1><p>保存你的觀察清單，隨時掌握市場動態。</p><div class="aside-stamp">M<span>+</span></div></div>
+<div class="auth-card"><div class="eyebrow">{{ '免費開設帳戶' if mode == 'register' else '登入你的帳戶' }}</div><h2>{{ '建立你的帳戶' if mode == 'register' else '再次見面，很高興。' }}</h2><form method="post" class="form-stack"><label>電郵地址<input type="email" name="email" autocomplete="email" placeholder="name@example.com" required></label><label>密碼<input type="password" name="password" minlength="8" autocomplete="{{ 'new-password' if mode == 'register' else 'current-password' }}" placeholder="最少 8 個字元" required></label><button class="button primary full">{{ '建立帳戶' if mode == 'register' else '登入' }} <span>↗</span></button></form><p class="switch-auth">{{ '已經有帳戶？' if mode == 'register' else '還未有帳戶？' }} <a href="{{ url_for('login' if mode == 'register' else 'register') }}">{{ '立即登入' if mode == 'register' else '免費註冊' }}</a></p><div class="secure-note">付款資料由 Stripe Checkout 安全處理</div></div></section>
+{% endblock %}

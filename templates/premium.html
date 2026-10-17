@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Premium 市場洞察{% endblock %}
+{% block content %}
+<section class="dash-heading"><div><div class="eyebrow">MARKETLINE PREMIUM</div><h1>進階市場洞察 <span>✳</span></h1><p>觀察清單內股票的五個交易日價格變化。</p></div><a class="text-link" href="{{ url_for('dashboard') }}">← 返回市場概覽</a></section>
+<section class="market-panel"><div class="panel-head"><div><div class="eyebrow">5-DAY MOMENTUM</div><h2>近期價格動向</h2></div><div class="status-pill"><i></i> Premium 解鎖</div></div>
+{% if insights %}<div class="quote-grid">{% for item in insights %}<article class="quote-card"><div class="quote-top"><span class="ticker">{{ item.symbol }}</span><span class="quote-date">{{ item.as_of }}</span></div><div class="quote-price">{{ '%.2f'|format(item.latest) }}</div><div class="quote-change {{ 'up' if item.week_change_pct >= 0 else 'down' }}">{{ '+' if item.week_change_pct >= 0 else '' }}{{ '%.2f'|format(item.week_change_pct) }}% <span class="muted">近五個交易日</span></div></article>{% endfor %}</div>{% else %}<div class="empty-state"><span>◌</span><b>暫時未能取得歷史報價</b><small>請稍後再試。</small></div>{% endif %}
+<div class="data-caption">根據 Yahoo Finance 最近可取得的日線收市價計算。過往表現不代表未來回報。</div></section>
+{% endblock %}
