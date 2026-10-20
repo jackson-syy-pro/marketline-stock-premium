@@ -49,6 +49,7 @@ python app.py
    將 CLI 顯示的 `whsec_...` 填入 `STRIPE_WEBHOOK_SECRET`。Dashboard endpoint secret 與 CLI secret 不同。
 4. 測試事件至少選擇 `checkout.session.completed`、`customer.subscription.created`、`customer.subscription.updated`、`customer.subscription.deleted`、`invoice.payment_failed`。
 5. 本地重新啟動 app 後，用 Stripe 測試卡流程驗證訂閱、續費失敗、權限更新及 Billing Portal。
+6. Listener: stripe listen --all-snapshot --forward-to localhost:5000/webhooks/stripe
 
 續費重試時間表應在 Stripe Dashboard 的 Revenue recovery / retries 設定。這個範例將重試交給 Stripe Billing，不會自行重複扣卡；可透過 `invoice.payment_failed` 通知會員處理付款方式。
 
