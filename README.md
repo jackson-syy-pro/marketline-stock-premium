@@ -78,8 +78,3 @@ python app.py
 | `customer.subscription.created/updated/deleted` | 更新訂閱和 Premium entitlement |
 | `invoice.payment_failed` | 產生用戶通知並將帳戶標示為 `past_due` |
 
-## 範例範圍及上線前工作
-
-這是教學及原型，不是可直接承載真實付款的生產服務。上線前應加上 CSRF 防護、登入／註冊限速、電郵驗證與密碼重設、資料庫 migration、HTTPS、正式行情授權、監控告警、管理員對帳介面、付款失敗寬限期政策，以及適用地區的隱私和訂閱條款。SQLite 適合本地示範；正式環境建議使用受管理的 PostgreSQL。Premium 目前以進階會員狀態作 entitlement 範例，尚未接駁獨立的研究報告或技術指標服務。
-
-本 App 不處理或儲存信用卡號；卡資料在 Stripe Checkout 輸入。股票資料只供參考，不構成投資建議。
